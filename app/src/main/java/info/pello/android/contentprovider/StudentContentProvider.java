@@ -53,7 +53,7 @@ public class StudentContentProvider extends ContentProvider {
 		// This will match: content://info.pello.android.contentprovider.provider.Students/students/
 		uriMatcher.addURI("info.pello.android.contentprovider.provider.Students", "students/", 1);
 
-		// This will match: content://info.pello.android.contentprovider.provider.Students/students/2
+		// This will match: content://info.pello.android.contentprovider.provider.Students/students/4
 	    uriMatcher.addURI("info.pello.android.contentprovider.provider.Students", "students/*/", 2);
 	}
 
@@ -76,20 +76,31 @@ public class StudentContentProvider extends ContentProvider {
 	@Override
 	public Cursor query(Uri uri, String[] projection, String selection,
 			String[] selectionArgs, String sortOrder) {
+		MatrixCursor cursor = new MatrixCursor(new String[] {"_id","name","description"});
+		mCursor.moveToFirst();
 
-		
 		Log.d("PELLODEBUG","CP> query " + uri+ " match:" + uriMatcher.match(uri));
 		switch (uriMatcher.match(uri)) {
 			case 1:
-				Log.d("PELLODEBUG","query to 1. ");
+				Log.d("PELLODEBUG","query to 1st URI. Return all: ");
+				cursor = mCursor;
 				break;
 			case 2:
-				Log.d("PELLODEBUG","query to 2. " + uri.getLastPathSegment());
+				Log.d("PELLODEBUG","query to 2nd URI. Param: " + uri.getLastPathSegment());
+				int id = Integer.parseInt(uri.getLastPathSegment());
+				// We move cursor to that position
+				while (mCursor.moveToNext()) {
+					if (mCursor.getInt(0) == id) {
+						cursor.addRow(new Object[] {id,mCursor.getString(1), mCursor.getString(2)});
+						break;
+					}
+				}
 				break;
-			default:	break;
+			default:
+				break;
 		}
 		
-		return mCursor;
+		return cursor;
 	}
 
 

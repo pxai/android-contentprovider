@@ -1,7 +1,4 @@
-#Sun Dec 11 09:14:56 CET 2016
-base.0=C\:\\code\\tmp\\a\\AndroidContentProvider\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_67477f6171217bbf588302454ef7b07e5a040b1c
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=C\:\\code\\tmp\\a\\AndroidContentProvider\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_05e8488df48fbc2500fc6c988ab40a190a12f8a6\\classes.dex
-base.1=C\:\\code\\tmp\\a\\AndroidContentProvider\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_05e8488df48fbc2500fc6c988ab40a190a12f8a6
-file.0=C\:\\code\\tmp\\a\\AndroidContentProvider\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_67477f6171217bbf588302454ef7b07e5a040b1c\\classes.dex
+#Wed Dec 14 12:08:08 CET 2016
+base.0=C\:\\code\\tmp\\a\\AndroidContentProvider\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=C\:\\code\\tmp\\a\\AndroidContentProvider\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
