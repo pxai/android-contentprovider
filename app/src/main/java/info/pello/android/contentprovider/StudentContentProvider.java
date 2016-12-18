@@ -76,7 +76,7 @@ public class StudentContentProvider extends ContentProvider {
 	@Override
 	public Cursor query(Uri uri, String[] projection, String selection,
 			String[] selectionArgs, String sortOrder) {
-		MatrixCursor cursor = new MatrixCursor(new String[] {"_id","name","description"});
+		MatrixCursor cursor = null;
 		mCursor.moveToFirst();
 
 		Log.d("PELLODEBUG","CP> query " + uri+ " match:" + uriMatcher.match(uri));
@@ -88,6 +88,7 @@ public class StudentContentProvider extends ContentProvider {
 			case 2:
 				Log.d("PELLODEBUG","query to 2nd URI. Param: " + uri.getLastPathSegment());
 				int id = Integer.parseInt(uri.getLastPathSegment());
+				cursor = new MatrixCursor(new String[] {"_id","name","description"});
 				// We move cursor to that position
 				while (mCursor.moveToNext()) {
 					if (mCursor.getInt(0) == id) {
